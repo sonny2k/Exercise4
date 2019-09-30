@@ -37,16 +37,16 @@ namespace UnitTestProject1
                  Assert.AreEqual(false, result0);
 
                  bool result2 = Program.IsPrime(2);
-                 Assert.AreEqual(false, result2);
+                 Assert.AreEqual(true, result2);
 
                  bool result3 = Program.IsPrime(3);
-                 Assert.AreEqual(false, result3);
+                 Assert.AreEqual(true, result3);
 
                  bool result4 = Program.IsPrime(4);
-                 Assert.AreEqual(true, result4);
+                 Assert.AreEqual(false, result4);
 
                  bool result5 = Program.IsPrime(5);
-                 Assert.AreEqual(false, result5);
+                 Assert.AreEqual(true, result5);
 
                  bool resultNegative = Program.IsPrime(-10);
                  Assert.AreEqual(false, resultNegative);
@@ -55,8 +55,8 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestSquare()
         {
-                int resultNega = Program.Square(2);
-                Assert.AreEqual(4, resultNega);
+                int resultNega = Program.Square(3);
+                Assert.AreEqual(9, resultNega);
         }
 
         [TestMethod]
@@ -64,6 +64,67 @@ namespace UnitTestProject1
         {
                 int resultPo = Program.Cube(-2);
                 Assert.AreEqual(-8, resultPo);
+        }
+
+        [TestMethod]
+        public void TestPow()
+        {
+                int resultPow = Program.Pow(3,5);
+                Assert.AreEqual(243, resultPow);
+        }
+
+        [TestMethod]
+        public void TestAbs()
+        {
+                int resultAbs = Program.Abs(-5);
+                Assert.AreEqual(5, resultAbs);
+
+                int resultAbs1 = Program.Abs(10);
+                Assert.AreEqual(10, resultAbs1);
+        }
+
+        [TestMethod]
+        public void TestCeil()
+        {
+                int resultCeil = Program.Ceil(3.7);
+                Assert.AreEqual(4, resultCeil);
+
+                int resultCeil1 = Program.Ceil(3.2);
+                Assert.AreEqual(4, resultCeil);
+        }
+
+        [TestMethod]
+        public void TestFloor()
+        {
+                int resultFloor = Program.Floor(5.67);
+                Assert.AreEqual(5, resultFloor);
+
+                int resultFloor1 = Program.Floor(10.19);
+                Assert.AreEqual(10, resultFloor1);
+        }
+
+        [TestMethod]
+        public void TestRand1()
+        {
+            int resultRand1 = Program.Rand1();
+            Assert.AreEqual(Program.Rand1(), resultRand1);
+        }
+
+        [TestMethod]
+        public void TestRand2()
+        {
+            float resultRand2 = Program.Rand2();
+            Assert.AreEqual(Program.Rand2(), resultRand2);
+        }
+
+        [TestMethod]
+        public void TestFactorial()
+        {
+                int resultF = Program.Factorial(10);
+                Assert.AreEqual(3628800, resultF);
+
+                int resultF1 = Program.Factorial(5);
+                Assert.AreEqual(120, resultF1);
         }
     }
 }

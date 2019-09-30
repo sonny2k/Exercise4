@@ -12,11 +12,23 @@ namespace EX4
         {
                 Console.WriteLine("input n: ");
                 int n = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("input x: ");
+                int x = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("input y: ");
+                int y = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("input t: ");
+                double t = double.Parse(Console.ReadLine());
                 IsOdd(n);
                 IsEven(n);
                 IsPrime(n);
                 Square(n);
                 Cube(n);
+                Pow(x, y);
+                Ceil(t);
+                Floor(t);
+                Rand1();
+                Rand2();
+                Factorial(n);
         }
         public static bool IsOdd( int n) 
         {
@@ -37,7 +49,7 @@ namespace EX4
         public static bool IsPrime(int n)
         {
                 int c = 0;
-                for (int i = 1; i <n; i++)
+                for (int i = 1; i<=n; i++)
                 {
                     if (n % i == 0)
                         c++;
@@ -57,5 +69,60 @@ namespace EX4
         {
                 return n * n * n;
         }
+
+        public static int Pow (int x, int y)
+        {
+                int result = 1;
+                for (int i = 1; i <= y; i++)
+                    result = result * x;
+                return result;
+        }
+
+        public static int Abs(int n)
+        {
+               if (n<0)
+                    return n * -1;
+               else
+                    return n;
+        }  
+  
+        public static int Ceil(double t)
+        {
+                int p = (int) t;
+                if (t - p > 0)
+                    t = p + 1;
+                return (int)t;
+        }
+
+        public static int Floor(double t)
+        {
+                int p = (int)t;
+                if (t - p > 0)
+                    t = p;
+                return (int)t;
+        }
+
+        public static int Rand1()
+        {
+            Random i = new Random();
+            int k = i.Next(0, 2 ^ 31 - 1);
+            return k;
+        }
+
+        public static float Rand2()
+        {
+            Random j = new Random();
+            float u = j.Next(0, 1);
+            return u;
+        }
+
+        public static int Factorial(int n)
+        {
+            int F = 1;
+            for (int i = 1; i <= n; i++)
+                F = F * i;
+            return F;     
+        }
+
     }
 }

@@ -54,9 +54,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EX4\EX4a.csproj">
+    <ProjectReference Include="..\EX4\EX4a1.csproj">
       <Project>{6f86c48e-fc8d-4ee5-9d0c-6e0a6f3f949a}</Project>
-      <Name>EX4a</Name>
+      <Name>EX4a1</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
