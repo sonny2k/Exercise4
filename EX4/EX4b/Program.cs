@@ -6,35 +6,33 @@ using System.Threading.Tasks;
 
 namespace EX4b
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("input length: ");
-            int n = Convert.ToInt32(Console.ReadLine());
-            int[] A = new int[n];
-            Input(A, n);
-            IsContains5(A, n);
-            IsContains5Or6(A, n);
-            IsContains5And6(A, n);
-            Counts5(A, n);
-            Counts5Or6(A, n);
-            SumArray(A, n);
+            int[] A = new int[10];
+            Input(A);
+            IsContains5(A);
+            IsContains5Or6(A);
+            IsContains5And6(A);
+            Counts5(A);
+            Counts5Or6(A);
+            SumArray(A);
         }
 
-        static void Input(int[] A, int n)
+        public static void Input(int[] A)
         {
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i <A.Length; i++)
             {
                 Console.Write("A[" + i + "]=");
                 A[i] = int.Parse(Console.ReadLine());
             }
         }
 
-        static bool IsContains5(int[] A, int n)
+        public static bool IsContains5(int[] A)
         {
             int flag = 0;
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < A.Length; i++)
             {
                 if (A[i] == 5)
                     flag++;
@@ -51,10 +49,10 @@ namespace EX4b
             }
         }
 
-        static bool IsContains5Or6(int[] A, int n)
+        public static bool IsContains5Or6(int[] A)
         {
             int flag = 0;
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < A.Length; i++)
             {
                 if (A[i] == 5 || A[i] == 6)
                     flag++;
@@ -71,10 +69,10 @@ namespace EX4b
             }
         }
 
-        static bool IsContains5And6(int[] A, int n)
+        public static bool IsContains5And6(int[] A)
         {
             int flag = 0;
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < A.Length; i++)
             {
                 if (A[i] == 5 && A[i] == 6)
                     flag++;
@@ -91,11 +89,11 @@ namespace EX4b
             }
         }
 
-        static int Counts5(int[] A, int n)
+        public static int Counts5(int[] A)
         {
             int c = 0;
             int flag = 0;
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < A.Length; i++)
             {
                 if (A[i] == 5)
                     flag++;
@@ -105,10 +103,10 @@ namespace EX4b
                 return flag;
         }
 
-        static int Counts5Or6(int[] A, int n)
+        public static int Counts5Or6(int[] A)
         {
             int flag = 0;
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < A.Length; i++)
             {
                 if (A[i] == 5 || A[i] == 6)
                     flag++;
@@ -118,10 +116,10 @@ namespace EX4b
                 return flag;
         }
 
-        static int SumArray(int[] A, int n)
+        public static int SumArray(int[] A)
         {
             int sum = 0;
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < A.Length; i++)
                 sum += A[i];
             Console.WriteLine("Summary of this array is: " + sum);
             return sum;

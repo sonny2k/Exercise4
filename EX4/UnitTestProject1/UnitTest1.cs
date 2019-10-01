@@ -71,6 +71,9 @@ namespace UnitTestProject1
         {
                 int resultPow = Program.Pow(3,5);
                 Assert.AreEqual(243, resultPow);
+
+                double resultPow1 = Program.Pow(1/2, 3);
+                Assert.AreEqual(0.125, resultPow1);
         }
 
         [TestMethod]
@@ -89,8 +92,15 @@ namespace UnitTestProject1
                 int resultCeil = Program.Ceil(3.7);
                 Assert.AreEqual(4, resultCeil);
 
-                int resultCeil1 = Program.Ceil(3.2);
-                Assert.AreEqual(4, resultCeil);
+                int resultCeil1 = Program.Ceil(-3);
+                Assert.AreEqual(-3, resultCeil);
+
+                int result2 = Program.Ceil(-2.7f);
+                Assert.AreEqual(-2, result2);
+
+                int result3 = Program.Ceil(5);
+                Assert.AreEqual(5, result3);
+
         }
 
         [TestMethod]
@@ -101,20 +111,15 @@ namespace UnitTestProject1
 
                 int resultFloor1 = Program.Floor(10.19);
                 Assert.AreEqual(10, resultFloor1);
-        }
 
-        [TestMethod]
-        public void TestRand1()
-        {
-            int resultRand1 = Program.Rand1();
-            Assert.AreEqual(Program.Rand1(), resultRand1);
-        }
+                int resultFloor2 = Program.Floor(-2.3f);
+                Assert.AreEqual(-3, resultFloor2);
 
-        [TestMethod]
-        public void TestRand2()
-        {
-            float resultRand2 = Program.Rand2();
-            Assert.AreEqual(Program.Rand2(), resultRand2);
+                int resultFloor3 = Program.Ceil(-9);
+                Assert.AreEqual(-9, resultFloor2);
+
+                int resultFloor4 = Program.Ceil(5);
+                Assert.AreEqual(5, resultFloor4);
         }
 
         [TestMethod]

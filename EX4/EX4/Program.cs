@@ -73,9 +73,20 @@ namespace EX4
         public static int Pow (int x, int y)
         {
                 int result = 1;
-                for (int i = 1; i <= y; i++)
-                    result = result * x;
-                return result;
+                if (y > 0)
+                {
+                    for (int i = 1; i <= y; i++)
+                        result = result * x;
+                    return result;
+                }
+               
+                else if (y < 0 && x > 0)
+                {
+                    return Pow(1/x,y);  
+                }
+                
+               
+                
         }
 
         public static int Abs(int n)
@@ -88,18 +99,22 @@ namespace EX4
   
         public static int Ceil(double t)
         {
-                int p = (int) t;
-                if (t - p > 0)
-                    t = p + 1;
-                return (int)t;
+            int p = (int)t;
+            if (t < 0)
+                if (p != t)
+                    return p;
+                return p;
+            return p = p + 1; 
         }
 
         public static int Floor(double t)
         {
                 int p = (int)t;
-                if (t - p > 0)
-                    t = p;
-                return (int)t;
+                if (t < 0)
+                    if (p != t)
+                        return p = p - 1;
+                    return p;
+                return p;
         }
 
         public static int Rand1()

@@ -175,5 +175,7 @@ namespace EX4b2
             }
             HLine(1, 'x'); HLine(H-3, ' '); HLine(1, 'x'); Console.WriteLine();
         }
+
+
     }
 }
