@@ -31,6 +31,8 @@ namespace EX4b2
             i(H);
             Console.WriteLine("\n");
             j(H);
+            Console.WriteLine("\n");
+            k(H);
             
         }
 
@@ -152,28 +154,37 @@ namespace EX4b2
 
         static void j(int H)
         {
-            HLine(1, 'x'); HLine(H-3, ' '); HLine(1, 'x'); Console.WriteLine();
-            int a = 1, b = 5;
-            for (int i = 0; i < H/2-2; i++ )
+            int b = H - 2;
+            int a = 0;
+            for (int i = 0; i < H / 2; i++)
             {
-                HLine(a, ' '); HLine(1, 'x'); HLine(H - b, ' '); HLine(1, 'x'); Console.WriteLine(); a++; b = b + 2;
+
+                HLine(a, ' '); HLine(1, 'x'); HLine(b, ' '); HLine(1, 'x'); Console.WriteLine();
+                a++;
+                b = b - 2;
             }
-            if (H%2==0)
+            HLine(H / 2, ' '); HLine(1, 'x'); Console.WriteLine();
+            int c = H / 2 - 1;
+            int d = 1;
+            for (int i = 0; i < H / 2; i++)
             {
-                HLine((H - 3) / 2 + 1, ' '); HLine(1, 'x'); Console.WriteLine();
+                HLine(c, ' '); HLine(1, 'x'); HLine(d, ' '); HLine(1, 'x'); Console.WriteLine();
+                c--;
+                d = d + 2;
             }
-            else
+        }
+
+        public static void k(int H)
+        {
+            for (int i = 0; i < H / 2; i++)
             {
-                HLine((H - 3) / 2, ' '); HLine(1, 'x'); Console.WriteLine();
+                HLine(H / 2, ' '); HLine(1, '+'); Console.WriteLine();
             }
-           
-            int c = 7, d = 1;
-            for (int i = 0; i <H/2-2; i++)
+            HLine(H, '+'); Console.WriteLine();
+            for (int i = 0; i < H / 2; i++)
             {
-                HLine(H - c, ' '); HLine(1, 'x'); c++;
-                HLine(d, ' '); HLine(1, 'x'); Console.WriteLine(); d = d + 2;
+                HLine(H / 2, ' '); HLine(1, '+'); Console.WriteLine();
             }
-            HLine(1, 'x'); HLine(H-3, ' '); HLine(1, 'x'); Console.WriteLine();
         }
 
 

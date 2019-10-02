@@ -69,10 +69,10 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestPow()
         {
-                int resultPow = Program.Pow(3,5);
+                double resultPow = Program.Pow(3,5);
                 Assert.AreEqual(243, resultPow);
 
-                double resultPow1 = Program.Pow(1/2, 3);
+                double resultPow1 = Program.Pow(2, -3);
                 Assert.AreEqual(0.125, resultPow1);
         }
 
@@ -93,7 +93,7 @@ namespace UnitTestProject1
                 Assert.AreEqual(4, resultCeil);
 
                 int resultCeil1 = Program.Ceil(-3);
-                Assert.AreEqual(-3, resultCeil);
+                Assert.AreEqual(-3, resultCeil1);
 
                 int result2 = Program.Ceil(-2.7f);
                 Assert.AreEqual(-2, result2);
@@ -116,7 +116,7 @@ namespace UnitTestProject1
                 Assert.AreEqual(-3, resultFloor2);
 
                 int resultFloor3 = Program.Ceil(-9);
-                Assert.AreEqual(-9, resultFloor2);
+                Assert.AreEqual(-9, resultFloor3);
 
                 int resultFloor4 = Program.Ceil(5);
                 Assert.AreEqual(5, resultFloor4);
@@ -130,6 +130,13 @@ namespace UnitTestProject1
 
                 int resultF1 = Program.Factorial(5);
                 Assert.AreEqual(120, resultF1);
+
+                int resultF2 = Program.Factorial(0);
+                Assert.AreEqual(1, resultF2);
+
+                int resultF3 = Program.Factorial(-4);
+                Assert.AreEqual(0, resultF3);
+                
         }
     }
 }

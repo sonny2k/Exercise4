@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D2809621-FB47-4C0D-9203-A52FC87493EC}</ProjectGuid>
+    <ProjectGuid>{9E3EBAC0-1A1A-4D28-8290-6DC04CC725EB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UnitTestProject1</RootNamespace>
-    <AssemblyName>UnitTestProject1</AssemblyName>
+    <RootNamespace>UnitTestProject2</RootNamespace>
+    <AssemblyName>UnitTestProject2</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -50,13 +50,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="UnitTest2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EX4\EX4a1.csproj">
-      <Project>{6f86c48e-fc8d-4ee5-9d0c-6e0a6f3f949a}</Project>
-      <Name>EX4a1</Name>
+    <ProjectReference Include="..\EX4b\EX4b1.csproj">
+      <Project>{ae2a1d05-29f7-4c38-acba-651700e16df4}</Project>
+      <Name>EX4b1</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

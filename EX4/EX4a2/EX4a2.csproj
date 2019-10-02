@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{40B23DC2-D544-461A-9EC2-5A975DD82EFF}</ProjectGuid>
+    <ProjectGuid>{05166A2D-AF2B-46CB-A76D-B30E95FE80D6}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EX4b2</RootNamespace>
-    <AssemblyName>EX4b2</AssemblyName>
+    <RootNamespace>EX4a2</RootNamespace>
+    <AssemblyName>EX4a2</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -46,6 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EX4\EX4a1.csproj">
+      <Project>{6f86c48e-fc8d-4ee5-9d0c-6e0a6f3f949a}</Project>
+      <Name>EX4a1</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

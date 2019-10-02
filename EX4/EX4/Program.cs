@@ -29,6 +29,13 @@ namespace EX4
                 Rand1();
                 Rand2();
                 Factorial(n);
+                Console.WriteLine("input X: ");
+                int X = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("intput N: ");
+                int N = Convert.ToInt32(Console.ReadLine());
+                CalculateEquation(X, N);
+                double result = CalculateEquation(X, N);
+                Console.WriteLine("sinX = {0}", result);
         }
         public static bool IsOdd( int n) 
         {
@@ -70,23 +77,24 @@ namespace EX4
                 return n * n * n;
         }
 
-        public static int Pow (int x, int y)
+        public static double Pow (int x, int y)
         {
-                int result = 1;
+                double result = 1;
                 if (y > 0)
                 {
                     for (int i = 1; i <= y; i++)
-                        result = result * x;
-                    return result;
-                }
-               
-                else if (y < 0 && x > 0)
+                        result = result * x;  
+                } 
+                else if (y < 0)
                 {
-                    return Pow(1/x,y);  
+                    y = y * -1;
+                    for (int i = 1; i <= y; i++)
+                    {
+                        result = result * x;
+                    }
+                    result = 1 / result;
                 }
-                
-               
-                
+                return result;
         }
 
         public static int Abs(int n)
@@ -101,20 +109,57 @@ namespace EX4
         {
             int p = (int)t;
             if (t < 0)
-                if (p != t)
+            {
+                if (p == t) 
+                {
                     return p;
-                return p;
-            return p = p + 1; 
+                }
+                else 
+                {
+                    return p; 
+                }
+                
+            }
+            else
+            {
+                if (p == t)
+                {
+                    return p; 
+                }
+                else
+                {
+                    return p = p + 1;
+                }
+            }
+                
         }
 
         public static int Floor(double t)
         {
-                int p = (int)t;
-                if (t < 0)
-                    if (p != t)
-                        return p = p - 1;
+            int p = (int)t;
+            if (t < 0)
+            {
+                if (p != t)
+                {
+                    return p = p - 1;
+                }
+                else
+                {
                     return p;
-                return p;
+                }
+
+            }
+            else
+            {
+                if (p == t)
+                {
+                    return p;
+                }
+                else
+                {
+                    return p;
+                }
+            }
         }
 
         public static int Rand1()
@@ -134,9 +179,19 @@ namespace EX4
         public static int Factorial(int n)
         {
             int F = 1;
-            for (int i = 1; i <= n; i++)
-                F = F * i;
+            if (n > 0)
+                for (int i = 1; i <= n; i++)
+                    F = F * i;
+            else if (n == 0)
+                F = 1;
+            else
+                return 0;
             return F;     
+        }
+
+        public static double CalculateEquation(int X, int N)
+        {
+            return Pow(-1, N) * Pow(X, 2 * N + 1) / Factorial(2 * N + 1);
         }
 
     }
