@@ -156,11 +156,10 @@ namespace EX4b2
 
         static void j(int H)
         {
-            int b = H - 2;
+            int b = H - 1;
             int a = 0;
             for (int i = 0; i < H / 2; i++)
             {
-
                 HLine(a, ' '); HLine(1, 'x'); HLine(b, ' '); HLine(1, 'x'); Console.WriteLine();
                 a++;
                 b = b - 2;
