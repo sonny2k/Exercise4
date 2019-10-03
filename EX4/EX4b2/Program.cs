@@ -33,6 +33,8 @@ namespace EX4b2
             j(H);
             Console.WriteLine("\n");
             k(H);
+            Console.WriteLine("\n");
+            DrawX2(H, 'T');
             
         }
 
@@ -54,7 +56,7 @@ namespace EX4b2
         {
             for (int i = 0; i < H; i++)
             {
-                HLine(H, 'o');
+                HLine(H, 'o' );
                 Console.WriteLine();
             }
         }
@@ -187,6 +189,30 @@ namespace EX4b2
             }
         }
 
+        public static void DrawX2(int H, char c)
+        {
+            // cArr[i , j]: i is row, j is column
+            char[,] cArr = new char[H, H];
+            for (int i = 0; i < H; i++)
+                for (int j = 0; j < H; j++)
+                    cArr[i, j] = ' ';
+
+            for (int i = 0; i < H; i++)
+            {
+                cArr[i, i] = c;
+            }
+            for (int i = 0; i < H; i++ )
+            {
+                cArr[i, H - 1 - i] = c;
+            }
+
+                for (int i = 0; i < H; i++)
+                {
+                    for (int j = 0; j < H; j++)
+                        Console.WriteLine(cArr[i, j]);
+                    Console.WriteLine();
+                }
+        }
 
     }
 }

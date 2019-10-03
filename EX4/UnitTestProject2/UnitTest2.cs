@@ -18,6 +18,10 @@ namespace UnitTestProject2
             int[] A2 = new int[] { 1, 2, 3, 5 };
             bool rs1 = Program.IsContains5(A2);
             Assert.AreEqual(true, rs1);
+
+            int[] A3 = new int[0];
+            bool rs2 = Program.IsContains5(A3);
+            Assert.AreEqual(false, rs2);
         }
 
         [TestMethod]
@@ -51,9 +55,9 @@ namespace UnitTestProject2
             bool rs2 = Program.IsContains5And6(A3);
             Assert.AreEqual(false, rs2);
 
-            int[] A4 = new int[] { 1, 2, 6, 5 };
+            int[] A4 = new int[] { 1, 2, 5, 6 };
             bool rs3 = Program.IsContains5And6(A4);
-            Assert.AreEqual(false, rs3);
+            Assert.AreEqual(true, rs3);
         }
 
         [TestMethod]
@@ -79,9 +83,9 @@ namespace UnitTestProject2
             int rs = Program.Counts5Or6(A1);
             Assert.AreEqual(0, rs);
 
-            int[] A2 = new int[] { 1, 2, 3, 5 };
+            int[] A2 = new int[] { 1, 2, 3, 5, 6, 6};
             int rs1 = Program.Counts5Or6(A2);
-            Assert.AreEqual(1, rs1);
+            Assert.AreEqual(3, rs1);
 
             int[] A3 = new int[] { 1, 6, 3, 5 };
             int rs2 = Program.Counts5Or6(A3);
@@ -90,6 +94,10 @@ namespace UnitTestProject2
             int[] A4 = new int[] { 1, 2, 3, 6 };
             int rs3 = Program.Counts5Or6(A4);
             Assert.AreEqual(1, rs3);
+
+            int[] A5 = new int[] { 1, 2, 6, 6, 6 };
+            int rs4 = Program.Counts5Or6(A5);
+            Assert.AreEqual(3, rs4);
         }
 
         [TestMethod]
@@ -99,9 +107,9 @@ namespace UnitTestProject2
             int rs = Program.SumArray(A1);
             Assert.AreEqual(10, rs);
 
-            int[] A2 = new int[] { 1, 10, 3, 5 };
+            int[] A2 = new int[] { 1, 10, 3, -5 };
             int rs1 = Program.SumArray(A2);
-            Assert.AreEqual(19, rs1);
+            Assert.AreEqual(9, rs1);
 
             int[] A3 = new int[] { 1, 2, 3, 4, 8, 9, 10 };
             int rs2 = Program.SumArray(A3);

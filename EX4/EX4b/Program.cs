@@ -71,13 +71,19 @@ namespace EX4b
 
         public static bool IsContains5And6(int[] A)
         {
-            int flag = 0;
+            int flag5 = 0;
+            int flag6 = 0;
             for (int i = 0; i < A.Length; i++)
             {
-                if (A[i] == 5 && A[i] == 6)
-                    flag++;
+                if (A[i] == 5)
+                    flag5++;
             }
-            if (flag > 0)
+            for (int j = 0; j < A.Length; j++)
+            {
+                if (A[j] == 6)
+                    flag6++;
+            }
+            if (flag5 > 0 && flag6 > 0)
             {
                 Console.WriteLine("this array contains number 5 and 6!");
                 return true;
@@ -91,28 +97,30 @@ namespace EX4b
 
         public static int Counts5(int[] A)
         {
-            int flag = 0;
+            int c = 0;
             for (int i = 0; i < A.Length; i++)
             {
                 if (A[i] == 5)
-                    flag++;
+                    c++;
             }
-            if (flag > 0)
-                Console.WriteLine("there is/are " + flag + " number 5 in this array.");
-                return flag;
+                Console.WriteLine("there is/are " + c + " number 5 in this array.");
+                return c;
         }
 
         public static int Counts5Or6(int[] A)
         {
-            int flag = 0;
-            for (int i = 0; i < A.Length; i++)
+            int count = 0;
+            int flag6 = 0;
+            Counts5(A);
+            for (int j = 0; j < A.Length; j++)
             {
-                if (A[i] == 5 || A[i] == 6)
-                    flag++;
+                if (A[j] == 6)
+                    flag6++;
             }
-            if (flag > 0)
-                Console.WriteLine("there is/are " + flag + " number 5 or 6 in this array.");
-                return flag;
+            return flag6;
+         
+            if (c > 0 || flag6 > 0)
+                return count = Counts5(A) + flag6;
         }
 
         public static int SumArray(int[] A)
