@@ -110,17 +110,24 @@ namespace EX4b
         public static int Counts5Or6(int[] A)
         {
             int count = 0;
-            int flag6 = 0;
-            Counts5(A);
-            for (int j = 0; j < A.Length; j++)
+            int c6 = 0;
+            int c5 = 0;
+            
+            for (int i = 0; i < A.Length; i++)
             {
-                if (A[j] == 6)
-                    flag6++;
+                if (A[i] == 5 || A[i] == 6)
+                {
+                    c5++;
+                    c6++;
+                }     
             }
-            return flag6;
-         
-            if (c > 0 || flag6 > 0)
-                return count = Counts5(A) + flag6;
+            return c5;
+            return c6;
+            if (c5 > 0 || c6 > 0)
+            {
+                count = c5 + c6;
+            }
+            return count;
         }
 
         public static int SumArray(int[] A)

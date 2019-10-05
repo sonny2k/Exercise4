@@ -156,7 +156,15 @@ namespace EX4b2
 
         static void j(int H)
         {
-            int b = H - 1;
+            int b;
+            if (H % 2 == 1)
+            {
+                b = H - 2;
+            }
+            else
+            {
+                b = H - 1;
+            }
             int a = 0;
             for (int i = 0; i < H / 2; i++)
             {
@@ -205,12 +213,12 @@ namespace EX4b2
                 cArr[i, H - 1 - i] = c;
             }
 
-                for (int i = 0; i < H; i++)
-                {
-                    for (int j = 0; j < H; j++)
-                        Console.WriteLine(cArr[i, j]);
+            for (int i = 0; i < H; i++)
+            {
+                for (int j = 0; j < H; j++)
+                    Console.WriteLine(cArr[i, j]);
                     Console.WriteLine();
-                }
+            }
         }
 
     }
